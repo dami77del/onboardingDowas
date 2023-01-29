@@ -3,8 +3,9 @@ import { useFonts } from 'expo-font'
 import { Image, StyleSheet, Text, SafeAreaView, View, TouchableOpacity } from 'react-native'
 import ImgNotification from '../images/card.png'
 import { SIZES, COLORBTN, TEXTBTN, BTN, TEXTBTNTRANS, CONTAINER, TITLE, DESCRIPTION } from '../constants/theme'
+import { NativeScreenNavigationContainer } from 'react-native-screens'
 
-const OnboardingNextStep = ({ navigation }) => {
+const OnboardingNextStep = ({ navigation  }) => {
   const [fontsLoaded] = useFonts(
     {
       DancingScript: require("../fonts/Unbounded-VariableFont_wght.ttf")
@@ -14,7 +15,6 @@ const OnboardingNextStep = ({ navigation }) => {
     return null
   }
   return (
-
     <View style={CONTAINER}>
       <Image source={ImgNotification} style={{ width: SIZES.width - 10, height: 400 }} resizeMode="contain" />
       <Text style={[TITLE, { fontFamily: 'DancingScript' }]}>
@@ -26,7 +26,7 @@ const OnboardingNextStep = ({ navigation }) => {
           <Text style={TEXTBTNTRANS}>Zurückkehren</Text>
         </TouchableOpacity >
         <View style={{ width: 15 }}></View>
-        <TouchableOpacity style={BTN} onPress={() => navigation.navigate("Legal")}>
+        <TouchableOpacity style={BTN} onPress={() => console.log("to home")}>
           <Text style={TEXTBTN}>Fortsetzen</Text>
         </TouchableOpacity >
       </View>
